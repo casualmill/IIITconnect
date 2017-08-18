@@ -1,20 +1,100 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#26A69A">
 
-    <com.google.android.gms.common.SignInButton
-        android:layout_margin="16dp"
-        android:id="@+id/google_sign_in"
-        android:layout_width="259dp"
-        android:layout_height="51dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="8dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginTop="8dp" />
+    <EditText
+        android:id="@+id/register_name"
+        android:hint="Name"
+        android:fontFamily="sans-serif"
+        android:textSize="18sp"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"
+        android:background="@android:color/white"/>
 
-</android.support.constraint.ConstraintLayout>
+    <EditText
+        android:id="@+id/register_roll_number"
+        android:hint="Roll Number"
+        android:fontFamily="sans-serif"
+        android:textSize="18sp"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/register_name"
+        android:background="@android:color/white"/>
+
+    <EditText
+        android:id="@+id/register_email"
+        android:hint="Email"
+        android:fontFamily="sans-serif"
+        android:textSize="18sp"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:inputType="textEmailAddress"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/register_roll_number"
+        android:background="@android:color/white"/>
+
+    <EditText
+        android:id="@+id/register_password"
+        android:hint="Password"
+        android:textSize="18sp"
+        android:background="@android:color/white"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/register_email"/>
+
+    <Button
+        android:id="@+id/register_button"
+        android:text="register"
+        android:textSize="14sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/register_year"/>
+
+    <RadioGroup
+        android:id="@+id/register_year"
+        android:layout_marginTop="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/register_password"
+        android:orientation="horizontal"
+        android:layout_centerHorizontal="true">
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="I Year"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="II Year"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="III Year"/>
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="IV Year"/>
+    </RadioGroup>
+
+</RelativeLayout>

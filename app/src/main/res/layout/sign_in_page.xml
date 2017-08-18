@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#26A69A"
+    style="@style/AppTheme.NoActionBar">
+
+    <EditText
+        android:id="@+id/roll_number_sign_in"
+        android:hint="Roll Number"
+        android:fontFamily="sans-serif"
+        android:textSize="18sp"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"
+        android:background="@android:color/white"/>
+
+    <EditText
+        android:id="@+id/password_sign_in"
+        android:hint="Password"
+        android:textSize="18sp"
+        android:background="@android:color/white"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:inputType="textPassword"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/roll_number_sign_in"/>
+
+    <Button
+        android:id="@+id/login"
+        android:text="login"
+        android:textSize="14sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/password_sign_in"/>
+
+
+</RelativeLayout>
