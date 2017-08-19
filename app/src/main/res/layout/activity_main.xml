@@ -69,7 +69,7 @@
         android:layout_marginRight="8dp"
         android:layout_marginTop="16dp"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/register_year"/>
+        android:layout_below="@+id/register_year" />
 
     <RadioGroup
         android:id="@+id/register_year"
