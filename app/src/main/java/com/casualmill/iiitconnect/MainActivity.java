@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.auth.api.Auth;
@@ -39,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
     //EditText Views
     EditText mUserName,mEmail,mRollNumber,mPassword;
 
+    //TextViews
+    TextView mAlreadyRegistered;
+
     //firebase variables
     private FirebaseAuth mAuth;
     FirebaseAuth.AuthStateListener mAuthListener;
@@ -50,13 +54,22 @@ public class MainActivity extends AppCompatActivity {
 
         //firebase variables
         mAuth = FirebaseAuth.getInstance();
-        mAuth = FirebaseAuth.getInstance();
 
         //Registering details
         mUserName = (EditText) findViewById(R.id.register_name);
         mEmail = (EditText) findViewById(R.id.register_email);
         mRollNumber = (EditText) findViewById(R.id.register_roll_number);
         mPassword = (EditText) findViewById(R.id.register_password);
+
+        //already registered TextView
+        mAlreadyRegistered = (TextView) findViewById(R.id.already_registered_text_view);
+        //redirect to the login a page
+        mAlreadyRegistered.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(MainActivity.this,LoginPageActivity.class));
+            }
+        });
 
         //Buttons
         registerButton = (Button) findViewById(R.id.register_button);
