@@ -20,7 +20,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 
-public class MainActivity extends AppCompatActivity {
+public class RegisterActivity extends AppCompatActivity {
 
     //Buttons
     Button registerButton;
@@ -56,7 +56,7 @@ public class MainActivity extends AppCompatActivity {
         mAlreadyRegistered.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(MainActivity.this,LoginPageActivity.class));
+                startActivity(new Intent(RegisterActivity.this,LoginPageActivity.class));
             }
         });
 
@@ -73,7 +73,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if(firebaseAuth.getCurrentUser()!=null){
-                    startActivity(new Intent(MainActivity.this,SignedIn.class));
+                    startActivity(new Intent(RegisterActivity.this,SignedIn.class));
                 }
             }
         };
@@ -103,12 +103,12 @@ public class MainActivity extends AppCompatActivity {
                     databaseReference.child("users").child(userID).setValue(userInformation);
 
                     //redirect to the signed in activity
-                    startActivity(new Intent(MainActivity.this,SignedIn.class));
+                    startActivity(new Intent(RegisterActivity.this,SignedIn.class));
                 }
 
                 //if registering is failed
                 else{
-                    Toast.makeText(MainActivity.this,"Registering Failed! Please Try again",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(RegisterActivity.this,"Registering Failed! Please Try again",Toast.LENGTH_SHORT).show();
                 }
 
             }
