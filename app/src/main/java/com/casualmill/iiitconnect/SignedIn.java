@@ -26,7 +26,7 @@ public class SignedIn extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signed_in);
 
-        button = (Button) findViewById(R.id.google_log_out);
+        button = findViewById(R.id.google_log_out);
         mAuth = FirebaseAuth.getInstance();
 
         mAuthListener = new FirebaseAuth.AuthStateListener() {

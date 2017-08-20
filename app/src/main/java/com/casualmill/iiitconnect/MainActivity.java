@@ -2,34 +2,22 @@ package com.casualmill.iiitconnect;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
+
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.auth.api.Auth;
-import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
-import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
-import com.google.android.gms.auth.api.signin.GoogleSignInResult;
-import com.google.android.gms.common.ConnectionResult;
-import com.google.android.gms.common.SignInButton;
-import com.google.android.gms.common.SignInButton.ButtonSize;
-import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthCredential;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.firebase.auth.GoogleAuthProvider;
-import com.google.firebase.auth.UserInfo;
-
-import static android.R.attr.data;
-
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -46,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
     //firebase variables
     private FirebaseAuth mAuth;
     FirebaseAuth.AuthStateListener mAuthListener;
+    DatabaseReference databaseReference;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -56,13 +45,13 @@ public class MainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         //Registering details
-        mUserName = (EditText) findViewById(R.id.register_name);
-        mEmail = (EditText) findViewById(R.id.register_email);
-        mRollNumber = (EditText) findViewById(R.id.register_roll_number);
-        mPassword = (EditText) findViewById(R.id.register_password);
+        mUserName = findViewById(R.id.register_name);
+        mEmail = findViewById(R.id.register_email);
+        mRollNumber = findViewById(R.id.register_roll_number);
+        mPassword = findViewById(R.id.register_password);
 
         //already registered TextView
-        mAlreadyRegistered = (TextView) findViewById(R.id.already_registered_text_view);
+        mAlreadyRegistered = findViewById(R.id.already_registered_text_view);
         //redirect to the login a page
         mAlreadyRegistered.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         //Buttons
-        registerButton = (Button) findViewById(R.id.register_button);
+        registerButton = findViewById(R.id.register_button);
         registerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -100,6 +89,20 @@ public class MainActivity extends AppCompatActivity {
                 //if registering is successful
                 if(task.isSuccessful()){
                     FirebaseUser user = mAuth.getCurrentUser();
+
+                    //acquiring the details of the user
+                    String userID = user.getUid();
+                    String userName = mUserName.getText().toString();
+                    String Email = mEmail.getText().toString();
+                    String rollNumber = mRollNumber.getText().toString();
+                    databaseReference = FirebaseDatabase.getInstance().getReference();
+
+                    UserInformation userInformation = new UserInformation(userName,Email,rollNumber);
+
+                    //saving the user provided data to the firebase database
+                    databaseReference.child("users").child(userID).setValue(userInformation);
+
+                    //redirect to the signed in activity
                     startActivity(new Intent(MainActivity.this,SignedIn.class));
                 }
 

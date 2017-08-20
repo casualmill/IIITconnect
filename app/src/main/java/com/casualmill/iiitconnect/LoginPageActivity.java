@@ -45,11 +45,11 @@ public class LoginPageActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
 
         //EditText Views
-        mEmail = (EditText) findViewById(R.id.roll_number_login);
-        mPassword = (EditText) findViewById(R.id.password_login);
+        mEmail = findViewById(R.id.roll_number_login);
+        mPassword = findViewById(R.id.password_login);
 
         //login button
-        mLoginButton = (Button) findViewById(R.id.login_button);
+        mLoginButton = findViewById(R.id.login_button);
         mLoginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -57,7 +57,7 @@ public class LoginPageActivity extends AppCompatActivity {
             }
         });
 
-        mNotRegistered = (TextView) findViewById(R.id.not_registered_text_view);
+        mNotRegistered = findViewById(R.id.not_registered_text_view);
         //redirect to MainAvtivity(registration page)
         mNotRegistered.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,7 +92,6 @@ public class LoginPageActivity extends AppCompatActivity {
                 }
             }
         });
-
 
     }
 
