@@ -2,7 +2,6 @@ package com.casualmill.iiitconnect.activities;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
-
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -91,6 +90,10 @@ public class RegisterActivity extends AppCompatActivity {
                 //if registering is successful
                 if(task.isSuccessful()){
                     FirebaseUser user = mAuth.getCurrentUser();
+                    if (user == null) {
+                        Toast.makeText(RegisterActivity.this, "Oops! Something went wrong", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
 
                     //acquiring the details of the user
                     String userID = user.getUid();
