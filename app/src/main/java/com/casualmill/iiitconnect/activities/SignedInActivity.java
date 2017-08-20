@@ -1,4 +1,4 @@
-package com.casualmill.iiitconnect;
+package com.casualmill.iiitconnect.activities;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -7,9 +7,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.casualmill.iiitconnect.R;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class SignedIn extends AppCompatActivity {
+public class SignedInActivity extends AppCompatActivity {
 
     Button button;
     FirebaseAuth mAuth;
@@ -33,7 +34,7 @@ public class SignedIn extends AppCompatActivity {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if(firebaseAuth.getCurrentUser()==null){
-                    startActivity(new Intent(SignedIn.this,RegisterActivity.class));
+                    startActivity(new Intent(SignedInActivity.this,RegisterActivity.class));
                 }
             }
         };

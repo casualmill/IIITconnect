@@ -1,4 +1,4 @@
-package com.casualmill.iiitconnect;
+package com.casualmill.iiitconnect.activities;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.casualmill.iiitconnect.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -70,7 +71,7 @@ public class LoginPageActivity extends AppCompatActivity {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if(firebaseAuth.getCurrentUser()!=null){
-                    startActivity(new Intent(LoginPageActivity.this,SignedIn.class));
+                    startActivity(new Intent(LoginPageActivity.this,SignedInActivity.class));
                 }
             }
         };
@@ -85,7 +86,7 @@ public class LoginPageActivity extends AppCompatActivity {
                 if (task.isSuccessful()) {
                     // Sign in success, update UI with the signed-in user's information
                     FirebaseUser user = mAuth.getCurrentUser();
-                    startActivity(new Intent(LoginPageActivity.this,SignedIn.class));
+                    startActivity(new Intent(LoginPageActivity.this,SignedInActivity.class));
                 } else {
                     // If sign in fails, display a message to the user.
                     Toast.makeText(LoginPageActivity.this, "Login failed! Try Again", Toast.LENGTH_SHORT).show();

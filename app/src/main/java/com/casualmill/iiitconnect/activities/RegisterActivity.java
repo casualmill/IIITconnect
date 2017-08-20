@@ -1,4 +1,4 @@
-package com.casualmill.iiitconnect;
+package com.casualmill.iiitconnect.activities;
 
 import android.content.Intent;
 import android.support.annotation.NonNull;
@@ -11,6 +11,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.casualmill.iiitconnect.R;
+import com.casualmill.iiitconnect.models.UserInfo;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -73,7 +75,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if(firebaseAuth.getCurrentUser()!=null){
-                    startActivity(new Intent(RegisterActivity.this,SignedIn.class));
+                    startActivity(new Intent(RegisterActivity.this,SignedInActivity.class));
                 }
             }
         };
@@ -97,13 +99,13 @@ public class RegisterActivity extends AppCompatActivity {
                     String rollNumber = mRollNumber.getText().toString();
                     databaseReference = FirebaseDatabase.getInstance().getReference();
 
-                    UserInformation userInformation = new UserInformation(userName,Email,rollNumber);
+                    UserInfo userInfo = new UserInfo(userName,Email,rollNumber);
 
                     //saving the user provided data to the firebase database
-                    databaseReference.child("users").child(userID).setValue(userInformation);
+                    databaseReference.child("users").child(userID).setValue(userInfo);
 
                     //redirect to the signed in activity
-                    startActivity(new Intent(RegisterActivity.this,SignedIn.class));
+                    startActivity(new Intent(RegisterActivity.this,SignedInActivity.class));
                 }
 
                 //if registering is failed
