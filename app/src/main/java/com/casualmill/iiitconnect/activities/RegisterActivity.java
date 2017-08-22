@@ -40,7 +40,7 @@ public class RegisterActivity extends AppCompatActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.register_page);
 
         //firebase variables
         mAuth = FirebaseAuth.getInstance();
@@ -95,11 +95,13 @@ public class RegisterActivity extends AppCompatActivity {
                         return;
                     }
 
+                    //TODO: get the input from the radio button
+                    //TODO: check that no fields are empty during registration
                     //acquiring the details of the user
                     String userID = user.getUid();
                     String userName = mUserName.getText().toString();
                     String Email = mEmail.getText().toString();
-                    String rollNumber = mRollNumber.getText().toString();
+                    String rollNumber = mRollNumber.getText().toString().toUpperCase();
                     databaseReference = FirebaseDatabase.getInstance().getReference();
 
                     UserInfo userInfo = new UserInfo(userName,Email,rollNumber);
