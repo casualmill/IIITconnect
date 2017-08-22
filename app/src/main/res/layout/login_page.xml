@@ -10,7 +10,6 @@
     <EditText
         android:id="@+id/roll_number_login"
         android:hint="Roll Number/Email"
-        android:fontFamily="sans-serif"
         android:textSize="18sp"
         android:layout_width="250dp"
         android:layout_height="wrap_content"

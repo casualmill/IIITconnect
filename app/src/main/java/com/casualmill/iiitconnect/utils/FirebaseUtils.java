@@ -3,7 +3,6 @@ package com.casualmill.iiitconnect.utils;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.NonNull;
-import android.util.Log;
 import android.util.Patterns;
 import android.widget.Toast;
 
@@ -33,13 +32,15 @@ public class FirebaseUtils {
     // static class
     private FirebaseUtils(){}
 
-    public static void Authenticate(final Context mContext, String id, final String password) {
+    public static void Authenticate(final Context mContext, final String id, final String password) {
 
-        if (!Patterns.EMAIL_ADDRESS.matcher(id).matches()) {
+        //converting the roll number to uppercase
+        String capsRollNumber = id.toUpperCase();
+
+        if (!Patterns.EMAIL_ADDRESS.matcher(capsRollNumber).matches()) {
             // username
-            Log.e("test", "t1");
             DatabaseReference db = FirebaseDatabase.getInstance().getReference();
-            Query user_query = db.child("users").orderByChild("rollNumber").equalTo(id);
+            Query user_query = db.child("users").orderByChild("rollNumber").equalTo(capsRollNumber);
             user_query.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
@@ -72,7 +73,6 @@ public class FirebaseUtils {
                     mContext.startActivity(new Intent(mContext, SignedInActivity.class));
                 } else {
                     // If sign in fails, display a message to the user.
-                    Log.w("TEST", "createUserWithEmail:failure", task.getException());
                     if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {
                         Toast.makeText(mContext, "Invalid Password! Try Again", Toast.LENGTH_SHORT).show();
                     } else {

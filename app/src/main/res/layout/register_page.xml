@@ -7,24 +7,22 @@
     <EditText
         android:id="@+id/register_name"
         android:hint="Name"
-        android:fontFamily="sans-serif"
+        android:inputType="textCapWords"
         android:textSize="18sp"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:inputType="textCapWords"
         android:layout_marginRight="8dp"
         android:layout_marginTop="16dp"
-        android:layout_centerHorizontal="true"
-        android:background="@android:color/white"/>
+        android:background="@android:color/white"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/register_roll_number" />
 
     <EditText
         android:id="@+id/register_roll_number"
         android:hint="Roll Number"
-        android:fontFamily="sans-serif"
         android:textSize="18sp"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:inputType="textCapCharacters"
         android:layout_marginRight="8dp"
         android:layout_marginTop="16dp"
         android:layout_centerHorizontal="true"
@@ -35,7 +33,6 @@
     <EditText
         android:id="@+id/register_email"
         android:hint="Email"
-        android:fontFamily="sans-serif"
         android:textSize="18sp"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
@@ -79,18 +76,22 @@
         android:orientation="horizontal"
         android:layout_centerHorizontal="true">
         <RadioButton
+            android:id="@+id/option_first_year"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="I Year"/>
         <RadioButton
+            android:id="@+id/option_second_year"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="II Year"/>
         <RadioButton
+            android:id="@+id/option_third_year"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="III Year"/>
         <RadioButton
+            android:id="@+id/option_fourth_year"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="IV Year"/>

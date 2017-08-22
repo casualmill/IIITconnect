@@ -10,10 +10,6 @@ public class UserInfo {
     public String email;
     public String rollNumber;
 
-    public UserInfo() {
-
-    }
-
     public UserInfo(String userName, String email, String rollNumber) {
         this.userName = userName;
         this.email = email;
