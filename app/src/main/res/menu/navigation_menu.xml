@@ -3,17 +3,26 @@
 
     <item
         android:id="@+id/nav_newsfeed"
+        android:icon="@drawable/ic_dashboard_black_24dp"
         android:title="Newsfeed"/>
 
     <item
         android:id="@+id/nav_chats"
+        android:icon="@drawable/ic_chat_black_24dp"
         android:title="Chats"/>
 
     <item
         android:id="@+id/nav_account"
+        android:icon="@drawable/ic_account_circle_black_24dp"
         android:title="My Account"/>
 
     <item
         android:id="@+id/nav_settings"
+        android:icon="@drawable/ic_settings_black_24dp"
         android:title="Settings"/>
+
+    <item
+        android:id="@+id/nav_logout"
+        android:icon="@drawable/ic_power_settings_new_black_24dp"
+        android:title="Logout"/>
 </menu>

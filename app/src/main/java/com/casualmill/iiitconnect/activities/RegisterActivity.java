@@ -99,8 +99,7 @@ public class RegisterActivity extends AppCompatActivity {
                     //send verification email
                     sendEmailVerification(user);
 
-                    //TODO: get the input from the radio button
-                    //TODO: check that no fields are empty during registration
+
                     //acquiring the details of the user
                     String userID = user.getUid();
                     String userName = mUserName.getText().toString();
