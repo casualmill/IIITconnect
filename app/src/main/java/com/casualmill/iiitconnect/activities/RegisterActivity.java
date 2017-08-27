@@ -89,11 +89,15 @@ public class RegisterActivity extends AppCompatActivity {
 
                 //if registering is successful
                 if(task.isSuccessful()){
+
                     FirebaseUser user = mAuth.getCurrentUser();
                     if (user == null) {
                         Toast.makeText(RegisterActivity.this, "Oops! Something went wrong", Toast.LENGTH_SHORT).show();
                         return;
                     }
+
+                    //send verification email
+                    sendEmailVerification(user);
 
                     //TODO: get the input from the radio button
                     //TODO: check that no fields are empty during registration
@@ -128,6 +132,21 @@ public class RegisterActivity extends AppCompatActivity {
         super.onStart();
 
         mAuth.addAuthStateListener(mAuthListener);
+
+    }
+
+    private void sendEmailVerification(FirebaseUser user){
+
+        if(user != null){
+            user.sendEmailVerification().addOnCompleteListener(new OnCompleteListener<Void>() {
+                @Override
+                public void onComplete(@NonNull Task<Void> task) {
+                    if(task.isSuccessful()){
+                        Toast.makeText(RegisterActivity.this,"Verification Email Sent",Toast.LENGTH_SHORT).show();
+                    }
+                }
+            });
+        }
 
     }
 }
