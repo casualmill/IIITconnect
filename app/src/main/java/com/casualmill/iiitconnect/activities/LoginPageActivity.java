@@ -67,7 +67,7 @@ public class LoginPageActivity extends AppCompatActivity {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if(firebaseAuth.getCurrentUser()!=null){
-                    startActivity(new Intent(LoginPageActivity.this,SignedInActivity.class));
+                    startActivity(new Intent(LoginPageActivity.this,HomeActivity.class));
                 }
             }
         };

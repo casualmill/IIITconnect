@@ -1,80 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#26A69A">
+    android:orientation="vertical"
+    android:padding="16dp">
 
-    <EditText
-        android:id="@+id/register_name"
-        android:hint="Name"
-        android:inputType="textCapWords"
-        android:textSize="18sp"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="16dp"
-        android:background="@android:color/white"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/register_roll_number" />
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/register_roll_number"
-        android:hint="Roll Number"
-        android:textSize="18sp"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/register_name"
+        <EditText
+            android:id="@+id/register_name"
+            android:hint="Name"
+            android:inputType="textCapWords"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"/>
 
-        android:background="@android:color/white"/>
+    </android.support.design.widget.TextInputLayout>
 
-    <EditText
-        android:id="@+id/register_email"
-        android:hint="Email"
-        android:textSize="18sp"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:inputType="textEmailAddress"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/register_roll_number"
-        android:background="@android:color/white"/>
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <EditText
-        android:id="@+id/register_password"
-        android:hint="Password"
-        android:textSize="18sp"
-        android:background="@android:color/white"
-        android:layout_width="250dp"
-        android:layout_height="wrap_content"
-        android:inputType="textPassword"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/register_email"/>
+        <EditText
+            android:id="@+id/register_roll_number"
+            android:hint="Roll Number"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"/>
 
-    <Button
-        android:id="@+id/register_button"
-        android:text="register"
-        android:textSize="14sp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="16dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/register_year" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/register_email"
+            android:hint="Email"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:layout_margin="16dp"/>
+
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <EditText
+            android:id="@+id/register_password"
+            android:hint="Password"
+            android:textSize="18sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:layout_margin="16dp"/>
+
+    </android.support.design.widget.TextInputLayout>
 
     <RadioGroup
         android:id="@+id/register_year"
-        android:layout_marginTop="16dp"
+        android:layout_margin="16dp"
+        android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/register_password"
-        android:orientation="horizontal"
-        android:layout_centerHorizontal="true">
+        android:orientation="horizontal">
         <RadioButton
             android:id="@+id/option_first_year"
             android:layout_width="wrap_content"
@@ -97,13 +93,21 @@
             android:text="IV Year"/>
     </RadioGroup>
 
+    <Button
+        android:id="@+id/register_button"
+        android:text="register"
+        android:textSize="14sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:layout_gravity="center"/>
+
     <TextView
         android:id="@+id/already_registered_text_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Already registered? Login"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/register_button"
-        android:layout_marginTop="16dp" />
+        android:layout_gravity="center"
+        android:layout_margin="16dp"/>
 
-</RelativeLayout>
+</LinearLayout>
