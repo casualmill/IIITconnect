@@ -74,7 +74,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if(firebaseAuth.getCurrentUser()!=null){
-                    startActivity(new Intent(RegisterActivity.this,HomeActivity.class));
+                    startActivity(new Intent(RegisterActivity.this,NavigationDrawerActivity.class));
                 }
             }
         };
@@ -113,7 +113,7 @@ public class RegisterActivity extends AppCompatActivity {
                     databaseReference.child("users").child(userID).setValue(userInfo);
 
                     //redirect to the signed in activity
-                    startActivity(new Intent(RegisterActivity.this,HomeActivity.class));
+                    startActivity(new Intent(RegisterActivity.this,NavigationDrawerActivity.class));
                 }
 
                 //if registering is failed

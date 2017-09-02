@@ -6,7 +6,7 @@ import android.support.annotation.NonNull;
 import android.util.Patterns;
 import android.widget.Toast;
 
-import com.casualmill.iiitconnect.activities.HomeActivity;
+import com.casualmill.iiitconnect.activities.NavigationDrawerActivity;
 import com.casualmill.iiitconnect.models.UserInfo;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -70,7 +70,7 @@ public class FirebaseUtils {
                 if (task.isSuccessful()) {
                     // Sign in success, update UI with the signed-in user's information
                     sUser = auth.getCurrentUser();
-                    mContext.startActivity(new Intent(mContext, HomeActivity.class));
+                    mContext.startActivity(new Intent(mContext, NavigationDrawerActivity.class));
                 } else {
                     // If sign in fails, display a message to the user.
                     if (task.getException() instanceof FirebaseAuthInvalidCredentialsException) {

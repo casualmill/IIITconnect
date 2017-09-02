@@ -1,113 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:padding="16dp">
 
-    <android.support.design.widget.TextInputLayout
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/register_name"
-            android:hint="Name"
-            android:inputType="textCapWords"
-            android:textSize="18sp"
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"/>
+            android:layout_height="wrap_content">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/register_name"
+                android:hint="Name"
+                android:inputType="textCapWords"
+                android:textSize="18sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"/>
 
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/register_roll_number"
-            android:hint="Roll Number"
-            android:textSize="18sp"
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"/>
+            android:layout_height="wrap_content">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/register_roll_number"
+                android:hint="Roll Number"
+                android:textSize="18sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"/>
 
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/register_email"
-            android:hint="Email"
-            android:textSize="18sp"
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:layout_margin="16dp"/>
+            android:layout_height="wrap_content">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/register_email"
+                android:hint="Email"
+                android:textSize="18sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:layout_margin="16dp"/>
 
-    <android.support.design.widget.TextInputLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        </android.support.design.widget.TextInputLayout>
 
-        <EditText
-            android:id="@+id/register_password"
-            android:hint="Password"
-            android:textSize="18sp"
+        <android.support.design.widget.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:layout_margin="16dp"/>
+            android:layout_height="wrap_content">
 
-    </android.support.design.widget.TextInputLayout>
+            <EditText
+                android:id="@+id/register_password"
+                android:hint="Password"
+                android:textSize="18sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:layout_margin="16dp"/>
 
-    <RadioGroup
-        android:id="@+id/register_year"
-        android:layout_margin="16dp"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-        <RadioButton
-            android:id="@+id/option_first_year"
+        </android.support.design.widget.TextInputLayout>
+
+        <RadioGroup
+            android:id="@+id/register_year"
+            android:layout_margin="16dp"
+            android:layout_gravity="center"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="I Year"/>
-        <RadioButton
-            android:id="@+id/option_second_year"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/option_first_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="I Year"/>
+            <RadioButton
+                android:id="@+id/option_second_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="II Year"/>
+            <RadioButton
+                android:id="@+id/option_third_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="III Year"/>
+            <RadioButton
+                android:id="@+id/option_fourth_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="IV Year"/>
+        </RadioGroup>
+
+        <Button
+            android:id="@+id/register_button"
+            android:text="register"
+            android:textSize="14sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/already_registered_text_view"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="II Year"/>
-        <RadioButton
-            android:id="@+id/option_third_year"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="III Year"/>
-        <RadioButton
-            android:id="@+id/option_fourth_year"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="IV Year"/>
-    </RadioGroup>
+            android:text="Already registered? Login"
+            android:layout_gravity="center"
+            android:layout_margin="16dp"/>
 
-    <Button
-        android:id="@+id/register_button"
-        android:text="register"
-        android:textSize="14sp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:layout_gravity="center"/>
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/already_registered_text_view"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Already registered? Login"
-        android:layout_gravity="center"
-        android:layout_margin="16dp"/>
-
-</LinearLayout>
+</ScrollView>
