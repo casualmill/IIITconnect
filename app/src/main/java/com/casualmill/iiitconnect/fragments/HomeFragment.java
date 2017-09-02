@@ -11,10 +11,6 @@ import android.widget.Button;
 import com.casualmill.iiitconnect.R;
 import com.google.firebase.auth.FirebaseAuth;
 
-
-/**
- * A simple {@link Fragment} subclass.
- */
 public class HomeFragment extends Fragment {
 
 

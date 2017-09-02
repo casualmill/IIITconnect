@@ -29,6 +29,7 @@
             android:name=".activities.NavigationDrawerActivity"
             android:label="IIITconnect"
             android:theme="@style/AppTheme.NoActionBar"></activity>
+
     </application>
 
 </manifest>

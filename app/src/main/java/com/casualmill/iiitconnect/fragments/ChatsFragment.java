@@ -9,9 +9,6 @@ import android.view.ViewGroup;
 
 import com.casualmill.iiitconnect.R;
 
-/**
- * A simple {@link Fragment} subclass.
- */
 public class ChatsFragment extends Fragment {
 
 
