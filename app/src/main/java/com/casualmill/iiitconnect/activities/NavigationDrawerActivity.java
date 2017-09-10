@@ -48,7 +48,7 @@ public class NavigationDrawerActivity extends AppCompatActivity
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        //firebase instance
+        //redirect if user is null i.e not logged in or registered
         mAuth = FirebaseAuth.getInstance();
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
@@ -70,9 +70,16 @@ public class NavigationDrawerActivity extends AppCompatActivity
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.setDrawerListener(toggle);
         toggle.syncState();
-
+        
         navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+        View view = navigationView.getHeaderView(0);
+        //set email in navigation drawer
+        TextView navUserEmail = view.findViewById(R.id.nav_user_email);
+        navUserEmail.setText(mAuth.getCurrentUser().getEmail());
+        //set user name in navigation drawer
+        TextView navUserName = view.findViewById(R.id.nav_user_name);
+        navUserName.setText(mAuth.getCurrentUser().getDisplayName());
     }
 
     @Override
